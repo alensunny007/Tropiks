@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+{% block title %}Our Menu - Tropiks{% endblock %}
+{% block content %}
+<div class="max-w-6xl mx-auto py-8">
+    <!-- Page Header -->
+    <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-white mb-4">Our Menu</h1>
+        <p class="text-xl text-gray-300">Choose what makes your taste buds happy</p>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="flex justify-center mb-8">
+        <div class="flex bg-gray-700 rounded-lg overflow-hidden">
+            <button class="category-btn px-6 py-3 bg-orange-500 text-gray-900 font-medium" data-category="all">All Items</button>
+            <button class="category-btn px-6 py-3 text-gray-300 hover:bg-gray-600" data-category="wraps">Wraps</button>
+            <button class="category-btn px-6 py-3 text-gray-300 hover:bg-gray-600" data-category="waffles">Waffles</button>
+            <button class="category-btn px-6 py-3 text-gray-300 hover:bg-gray-600" data-category="salads">Salads</button>
+            <button class="category-btn px-6 py-3 text-gray-300 hover:bg-gray-600" data-category="drinks">Drinks</button>
+        </div>
+    </div>
+
+    <!-- Menu Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="menu-grid">
+        <!-- Chicken Wrap -->
+        <div class="menu-item bg-gray-700 rounded-lg overflow-hidden hover:bg-gray-600 transition-colors" data-category="wraps">
+            <img src="https://cdn.pixabay.com/photo/2020/08/04/17/45/food-5463461_1280.jpg" alt="Chicken Wrap" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-semibold text-white">Chicken Wrap</h3>
+                    <span class="bg-lime-400 text-gray-900 px-2 py-1 rounded-full text-xs font-medium">Popular</span>
+                </div>
+                <p class="text-gray-300 text-sm mb-4">Grilled chicken with fresh vegetables and special sauce</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-lime-400 font-bold text-xl">GHS 25.00</span>
+                    <button class="add-to-cart bg-lime-400 text-gray-900 px-4 py-2 rounded-lg hover:bg-lime-500 transition-colors font-medium" data-name="Chicken Wrap" data-price="25.00">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tuna Wrap -->
+        <div class="menu-item bg-gray-700 rounded-lg overflow-hidden hover:bg-gray-600 transition-colors" data-category="wraps">
+            <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&h=200&fit=crop" alt="Tuna Wrap" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-semibold text-white mb-2">Tuna Wrap</h3>
+                <p class="text-gray-300 text-sm mb-4">Fresh tuna with crispy vegetables and herbs</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-lime-400 font-bold text-xl">GHS 28.00</span>
+                    <button class="add-to-cart bg-lime-400 text-gray-900 px-4 py-2 rounded-lg hover:bg-lime-500 transition-colors font-medium" data-name="Tuna Wrap" data-price="28.00">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nutella Waffle -->
+        <div class="menu-item bg-gray-700 rounded-lg overflow-hidden hover:bg-gray-600 transition-colors" data-category="waffles">
+            <img src="https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=400&h=200&fit=crop" alt="Nutella Waffle" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-semibold text-white">Nutella Waffle</h3>
+                    <span class="bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium">New</span>
+                </div>
+                <p class="text-gray-300 text-sm mb-4">Warm waffle topped with Nutella & ice cream</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-lime-400 font-bold text-xl">GHS 22.00</span>
+                    <button class="add-to-cart bg-lime-400 text-gray-900 px-4 py-2 rounded-lg hover:bg-lime-500 transition-colors font-medium" data-name="Nutella Waffle" data-price="22.00">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Berry Waffle -->
+        <div class="menu-item bg-gray-700 rounded-lg overflow-hidden hover:bg-gray-600 transition-colors" data-category="waffles">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=200&fit=crop" alt="Berry Waffle" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-semibold text-white mb-2">Berry Waffle</h3>
+                <p class="text-gray-300 text-sm mb-4">Waffle topped with strawberry & blueberry</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-lime-400 font-bold text-xl">GHS 26.00</span>
+                    <button class="add-to-cart bg-lime-400 text-gray-900 px-4 py-2 rounded-lg hover:bg-lime-500 transition-colors font-medium" data-name="Berry Waffle" data-price="26.00">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Caesar Salad -->
+        <div class="menu-item bg-gray-700 rounded-lg overflow-hidden hover:bg-gray-600 transition-colors" data-category="salads">
+            <img src="https://images.unsplash.com/photo-1546793665-c74683f339c1?w=400&h=200&fit=crop" alt="Caesar Salad" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-semibold text-white mb-2">Caesar Salad</h3>
+                <p class="text-gray-300 text-sm mb-4">Fresh lettuce, croutons, parmesan cheese</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-lime-400 font-bold text-xl">GHS 18.00</span>
+                    <button class="add-to-cart bg-lime-400 text-gray-900 px-4 py-2 rounded-lg hover:bg-lime-500 transition-colors font-medium" data-name="Caesar Salad" data-price="18.00">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tropical Smoothie -->
+        <div class="menu-item bg-gray-700 rounded-lg overflow-hidden hover:bg-gray-600 transition-colors" data-category="drinks">
+            <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=200&fit=crop" alt="Tropical Smoothie" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-semibold text-white mb-2">Tropical Smoothie</h3>
+                <p class="text-gray-300 text-sm mb-4">Mango, pineapple, and coconut blend</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-lime-400 font-bold text-xl">GHS 15.00</span>
+                    <button class="add-to-cart bg-lime-400 text-gray-900 px-4 py-2 rounded-lg hover:bg-lime-500 transition-colors font-medium" data-name="Tropical Smoothie" data-price="15.00">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Summary -->
+    <div class="fixed bottom-6 right-6 z-50" id="cart-summary" style="display: none;">
+        <div class="bg-lime-400 text-gray-900 p-4 rounded-lg shadow-lg">
+            <div class="flex items-center justify-between mb-2">
+                <span class="font-medium">Cart Items: <span id="cart-count">0</span></span>
+                <button onclick="clearCart()" class="text-gray-600 hover:text-gray-800">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="text-2xl font-bold mb-3" id="cart-total">GHS 0.00</div>
+            <button class="w-full bg-gray-800 text-white py-2 px-4 rounded font-medium hover:bg-gray-700 transition-colors">
+                Checkout
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let cart = [];
+    let cartTotal = 0;
+
+    // Category filtering
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const category = this.dataset.category;
+            
+            // Update active button
+            document.querySelectorAll('.category-btn').forEach(b => {
+                b.classList.remove('bg-lime-400', 'text-gray-900');
+                b.classList.add('text-gray-300');
+            });
+            this.classList.add('bg-lime-400', 'text-gray-900');
+            this.classList.remove('text-gray-300');
+
+            // Filter menu items
+            document.querySelectorAll('.menu-item').forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Add to cart functionality
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const name = this.dataset.name;
+            const price = parseFloat(this.dataset.price);
+            
+            cart.push({ name, price });
+            cartTotal += price;
+            
+            updateCartDisplay();
+            
+            // Visual feedback
+            this.innerHTML = '✓ Added';
+            this.classList.add('bg-green-500');
+            setTimeout(() => {
+                this.innerHTML = 'Add to Cart';
+                this.classList.remove('bg-green-500');
+                this.classList.add('bg-lime-400');
+            }, 1000);
+        });
+    });
+
+    function updateCartDisplay() {
+        const cartCount = document.getElementById('cart-count');
+        const cartSummary = document.getElementById('cart-summary');
+        const cartTotalElement = document.getElementById('cart-total');
+        
+        cartCount.textContent = cart.length;
+        cartTotalElement.textContent = `GHS ${cartTotal.toFixed(2)}`;
+        
+        if (cart.length > 0) {
+            cartSummary.style.display = 'block';
+        } else {
+            cartSummary.style.display = 'none';
+        }
+    }
+
+    function clearCart() {
+        cart = [];
+        cartTotal = 0;
+        updateCartDisplay();
+    }
+</script>
+{% endblock %}
+

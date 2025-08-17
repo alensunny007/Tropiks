@@ -7,3 +7,7 @@ from sqlalchemy.sql import func
 @main_bp.route('/')
 def home():
     return render_template('main/home.html')
+
+@main_bp.route('/menu')
+def menu():
+    return render_template('main/menu.html')

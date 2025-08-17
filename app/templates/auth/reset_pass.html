@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}Reset Password - Expense Tracker{% endblock %}
+{% block content %}
+
+    <div class="relative min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center px-4 py-8">
+        <!-- Background decorative elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-lime-400/10 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="relative w-full max-w-md animate-fade-in">
+            <!-- Back to Login Button -->
+            <div class="text-center mb-8">
+                <a href="{{ url_for('auth.login') }}" class="inline-flex items-center text-lime-400 
+                hover:text-lime-300 transition-all duration-300 mb-6 group">
+                    <svg class="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform duration-300" 
+                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    Back to Login
+                </a>
+
+                <h1 class="text-4xl font-bold text-white mb-3">Reset Password</h1>
+                <p class="text-gray-400">Enter your new password</p>
+            </div>
+
+            <!-- Form Container -->
+            <div class="bg-gray-800/50 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-700/50 p-8">
+                <form method="POST" action="{{ url_for('auth.reset_password', token=token) }}" class="space-y-6">
+                    {{ form.hidden_tag() }}
+                    
+                    <!-- New Password -->
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-300 mb-2">
+                            New Password
+                        </label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                          d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                            </div>
+                            {{ form.password(class="w-full pl-12 pr-4 py-4 bg-gray-700/50 border border-gray-600 rounded-xl 
+                                           text-white placeholder-gray-400 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 
+                                           transition-all duration-300", 
+                                           id="password", placeholder="Enter new password") }}
+                            {% if form.password.errors %}
+                                <p class="text-red-400 text-xs mt-2">{{ form.password.errors[0] }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div>
+                        <label for="confirm_password" class="block text-sm font-medium text-gray-300 mb-2">
+                            Confirm Password
+                        </label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            {{ form.confirm_password(class="w-full pl-12 pr-4 py-4 bg-gray-700/50 border border-gray-600 rounded-xl 
+                                                    text-white placeholder-gray-400 focus:ring-2 focus:ring-lime-400 focus:border-lime-400 
+                                                    transition-all duration-300", 
+                                                    id="confirm_password", placeholder="Confirm new password") }}
+                            {% if form.confirm_password.errors %}
+                                <p class="text-red-400 text-xs mt-2">{{ form.confirm_password.errors[0] }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    {{ form.submit(class="w-full bg-gradient-to-r from-lime-400 to-lime-500 text-gray-900 py-4 px-6 rounded-xl 
+                                   font-bold text-lg shadow-lg hover:from-lime-300 hover:to-lime-400 
+                                   transition-all duration-300 focus:outline-none focus:ring-2 
+                                   focus:ring-lime-400 focus:ring-offset-2 focus:ring-offset-gray-800") }}
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

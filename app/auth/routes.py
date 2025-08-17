@@ -34,7 +34,7 @@ def signup():
             login_user(user)
             
             flash('Account created successfully! Welcome to Tropiks!', 'success')
-            return redirect(url_for('main.dashboard'))  # Use blueprint.route format
+            return redirect(url_for('main.menu'))  # Use blueprint.route format
             
         except Exception as e:
             db.session.rollback()
@@ -66,7 +66,7 @@ def login():
                     return redirect(next_page)
             
             flash(f'Welcome back, {user.full_name}!', 'success')
-            return redirect(url_for('main.dashboard'))
+            return redirect(url_for('main.menu'))
         else:
             flash('Invalid email or password. Please try again.', 'error')
     

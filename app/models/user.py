@@ -15,8 +15,6 @@ class User(UserMixin,db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     is_active = db.Column(db.Boolean, default=True)
 
-    google_id = db.Column(db.String(100), unique=True, nullable=True)
-    apple_id = db.Column(db.String(100), unique=True, nullable=True)
     def set_password(self,password):
         self.password_hash=generate_password_hash(password)
 
