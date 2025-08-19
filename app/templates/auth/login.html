@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Login - Expense Tracker{% endblock %}
+{% block title %}Login - Tropiks{% endblock %}
 {% block content %}
 <div class="min-h-screen bg-gray-800 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
     <div class="max-w-xl mx-auto">
@@ -26,7 +26,7 @@
             {{ form.submit(class="w-full bg-orange-500 text-gray-900 py-4 px-6 rounded-md text-lg font-semibold hover:bg-orange-600 transition duration-200") }}
         </form>
         <div class="text-right">
-            <a href="/"class="text-sm text-orange-500 hover:text-orange-400 transition-colors duration-300">
+            <a href="{{url_for('auth.forgot_password')}}"class="text-sm text-orange-500 hover:text-orange-400 transition-colors duration-300">
                 Forgot password?
             </a>
         </div>
